@@ -1,6 +1,9 @@
+<h1>The Tech Blog</h1>
+
 <!-- Loop over each object in the projects array -->
 {{#each posts as |post| }}
     <div>
-       Title: {{post.title}}
+       <h3 class="post-title">Title: {{post.title}} <span>Posted by {{post.user.username}} on {{format_date post.date_created}}</span></h3>
+       <div class="post-content">{{post.description}}</div>
     </div>
 {{/each}}

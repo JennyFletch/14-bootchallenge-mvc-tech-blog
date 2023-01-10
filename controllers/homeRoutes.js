@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 router.get('/dashboard', async (req, res) => {
 
   try {
-    res.render('login', {
+    res.render('dashboard', {
         logged_in: req.session.logged_in,
     });
 
@@ -46,7 +46,7 @@ router.get('/', async (req, res) => {
         include: [
           {
             model: User,
-            attribute: ['name']
+            attribute: ['username']
           },
         ],
       });
