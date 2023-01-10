@@ -1,17 +1,14 @@
 [
     {
-      "name": "Jennifer934",
-      "email": "jfletcher@mailinator.com",
+      "username": "Jennifer934",
       "password": "password12345"
     },
     {
-      "name": "BellaFonte",
-      "email": "kittymoo@gmail.com",
+      "username": "BellaFonte",
       "password": "password12345"
     },
     {
-      "name": "JerryCadMan",
-      "email": "surveythis@aol.com",
+      "username": "JerryCadMan",
       "password": "password12345"
     }
 ]  

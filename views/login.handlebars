@@ -1,0 +1,31 @@
+<!-- display login form if user is not logged in -->
+
+<h1>Login Page</h1>
+
+{{#if logged_in}}
+
+      <h2>WELCOME</h2>
+      <p>You are currently logged in. </p>
+      <p><button class="btn" id="logout">LOGOUT</button></p>
+
+{{else}}
+
+    <div class='login-form-outer'>
+      <h2>LOGIN</h2>
+      <form class='form login-form'>
+        <div class='form-group'>
+          <input class='form-input' type='text' id='username-login' placeholder="username" />
+        </div>
+        <div class='form-group'>
+          <input class='form-input' type='password' id='password-login' placeholder="password" />
+        </div>
+        <div class='form-group'>
+          <button class='btn' type='submit'>LOGIN</button>
+        </div>
+        <div class='form-group'>
+          <a href="/register">register instead</a>
+        </div>
+      </form>
+    </div>
+    
+{{/if}}

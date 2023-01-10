@@ -1,24 +1,54 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
   
-    const email = document.querySelector('#email-login').value.trim();
+    console.log("form submitted");
+
+    const username = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
   
-    if (email && password) {
+    if (username && password) {
+      console.log("user input: " + username + " " + password);
       const response = await fetch('/api/users/login', {
         method: 'POST',
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/dashboard');
       } else {
         alert('Failed to log in');
       }
     }
-  };
+};
   
-  document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
+
+const logout = async () => {
+  console.log("click!");
+  const response = await fetch('/api/users/logout', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    document.location.replace('/login');
+  } else {
+    alert(response.statusText);
+  }
+};
+
+
+var loginForm = document.querySelector('.login-form');
+if(loginForm) {
+  loginForm.addEventListener('submit', loginFormHandler);
+}
+
+var navLogoutBtn = document.querySelector('#nav-logout');
+if(navLogoutBtn) {
+  navLogoutBtn.addEventListener('click', logout);
+}
+
+var logoutBtn = document.querySelector('#logout');
+if(logoutBtn) {
+logoutBtn.addEventListener('click', logout);
+}
