@@ -1,3 +1,18 @@
 <h1>Dashboard</h1>
 
+<!-- Loop through each of the user's posts -->
+{{#each posts as |post| }}
+    <div>
+       <h3 class="post-title">Title: {{post.title}} <span>Posted by {{post.user.username}} on {{format_date post.date_created}}</span></h3>
+       <div class="post-content">{{post.description}}</div>
+
+        <ul id="pc-{{post.id}}" class="post-comments">
+            {{#each post.comments as |comment|}}
+            <li>{{comment.description}} <div>&mdash; Commenter, {{format_date comment.date_created}}</div></li>
+            {{/each}}
+        </ul>
+
+    </div>
+{{/each}}
+
 <button class="btn" id="create-post">+ New Post</button>

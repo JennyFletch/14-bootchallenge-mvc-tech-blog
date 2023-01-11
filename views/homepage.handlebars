@@ -1,9 +1,18 @@
 <h1>The Tech Blog</h1>
 
-<!-- Loop over each object in the projects array -->
-{{#each posts as |post| }}
-    <div>
-       <h3 class="post-title">Title: {{post.title}} <span>Posted by {{post.user.username}} on {{format_date post.date_created}}</span></h3>
-       <div class="post-content">{{post.description}}</div>
-    </div>
-{{/each}}
+<div class="blogroll-posts">
+    <!-- Loop through each post in the database -->
+    {{#each posts as |post| }}
+        <div class="blogroll-post">
+        <h3 class="post-title" data-id="{{post.id}}">Title: {{post.title}} <span>Posted by {{post.user.username}} on {{format_date post.date_created}}</span></h3>
+        <div class="post-content">{{post.description}}</div>
+
+        <ul id="pc-{{post.id}}" class="post-comments">
+            {{#each post.comments as |comment|}}
+            <li>{{comment.description}} <div>&mdash; Commenter, {{format_date comment.date_created}}</div></li>
+            {{/each}}
+        </ul>
+
+        </div>
+    {{/each}}
+</div>
