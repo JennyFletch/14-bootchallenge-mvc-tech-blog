@@ -7,8 +7,8 @@
        <div class="post-content">{{post.description}}</div>
 
         <ul id="pc-{{post.id}}" class="post-comments">
-            {{#each post.comments as |comment|}}
-            <li>{{comment.description}} <div>&mdash; Commenter, {{format_date comment.date_created}}</div></li>
+            {{#each comments as |comment|}}
+            <li>{{comment.description}} <div>&mdash; {{comment.user.username}}, {{format_date comment.date_created}}</div></li>
             {{/each}}
         </ul>
 

@@ -35,13 +35,16 @@ router.get('/dashboard', async (req, res) => {
         user_id: req.session.user_id,
      },
      include: [
-      {
-        model: User,
-      },
-      {
-        model: Comment,
-      },
-    ],
+          {
+            model: User,
+          },
+          {
+            model: Comment,
+            where: {
+              post_id: req.session.user_id,
+            },
+          },
+        ],
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -69,11 +72,21 @@ router.get('/', async (req, res) => {
           },
         ],
       });
-  
       const posts = postData.map((post) => post.get({ plain: true }));
+
+      const commentData = await Comment.findAll({
+        include: [
+          {
+            model: User,
+          },
+        ],
+      });
+      const comments = commentData.map((comment) => comment.get({ plain: true }));
+
   
       res.render('homepage', {
         posts,
+        comments,
         logged_in: req.session.logged_in,
       });
     } catch (err) {

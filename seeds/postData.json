@@ -2,16 +2,16 @@
     {
       "title": "The MVC Model",
       "description": "As applications grew larger over the years, the need to organize files became much more vital to keeping projects managable.",
-      "date": "01-03-2023"
+      "date_created": "01-03-2023"
     },
     {
       "title": "Farewell to Flash",
       "description": "When Apple decided the iPad would not support Flash elements, many developers found themselves needing new skills in a pretty big hurry.",
-      "date": "11-14-2022"
+      "date_created": "11-14-2022"
     },
     {
       "title": "Wordpress for Beginners",
       "description": "The user-friendliness of tools like Wordpress empower users new to blogging and the web to create enterprise-level applications under tight deadlines.",
-      "date": "09-18-2021"
+      "date_created": "09-18-2021"
     }
 ]  
