@@ -40,9 +40,6 @@ router.get('/dashboard', async (req, res) => {
           },
           {
             model: Comment,
-            where: {
-              post_id: req.session.user_id,
-            },
           },
         ],
     });
