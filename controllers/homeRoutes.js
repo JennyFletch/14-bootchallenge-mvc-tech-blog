@@ -66,24 +66,18 @@ router.get('/', async (req, res) => {
           },
           {
             model: Comment,
+            include: [User]
           },
         ],
       });
       const posts = postData.map((post) => post.get({ plain: true }));
 
-      const commentData = await Comment.findAll({
-        include: [
-          {
-            model: User,
-          },
-        ],
-      });
+      /* const commentData = await Comment.findByPk(req.session.user_id);
       const comments = commentData.map((comment) => comment.get({ plain: true }));
-
+ */
   
       res.render('homepage', {
         posts,
-        comments,
         logged_in: req.session.logged_in,
       });
     } catch (err) {
