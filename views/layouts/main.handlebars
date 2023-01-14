@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Registry</title>
   <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
-    <nav>
+    <nav class="container">
       <a href="/">HOME</a>
     {{#if logged_in}}
       <a href="/dashboard">DASHBOARD</a>
@@ -20,7 +21,7 @@
     {{/if}}
     </nav>
   </header>
-  <main class="container container-fluid mt-5">
+  <main>
     {{{ body }}}
   </main>
   <footer>

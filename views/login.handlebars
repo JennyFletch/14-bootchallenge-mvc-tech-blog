@@ -1,6 +1,10 @@
 <!-- display login form if user is not logged in -->
 
-<h1>Login Page</h1>
+<div class="title-bar">
+    <h1 class="container py-2">User Login</h1>
+</div>
+
+<div class="user-login container">
 
 {{#if logged_in}}
 
@@ -11,13 +15,12 @@
 {{else}}
 
     <div class='login-form-outer'>
-      <h2>LOGIN</h2>
       <form class='form login-form'>
         <div class='form-group'>
-          <input class='form-input' type='text' id='username-login' placeholder="username" />
+          <input class='form-input col-4' type='text' id='username-login' placeholder="username" />
         </div>
         <div class='form-group'>
-          <input class='form-input' type='password' id='password-login' placeholder="password" />
+          <input class='form-input col-4' type='password' id='password-login' placeholder="password" />
         </div>
         <div class='form-group'>
           <button class='btn' type='submit'>LOGIN</button>
@@ -29,3 +32,5 @@
     </div>
     
 {{/if}}
+
+</div>
