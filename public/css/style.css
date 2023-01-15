@@ -48,6 +48,8 @@ main {
 main .blogroll-post {
     background-color: var(--main-white);
     margin:40px 0 10px; 
+    border-radius:6px;
+    overflow:hidden;
 }
 
 main .blogroll-post h3.post-title {
@@ -89,16 +91,24 @@ main .blogroll-post .post-comments ul li .meta {
 }
 
 main .blogroll-posts #create-post { 
-    margin-top:25px; 
+    margin-top:25px;
+    cursor:pointer; 
 }
 
 main .user-login, 
-main .user-registration {
+main .user-registration,
+main .create-a-post {
     padding:40px 0 0 0; 
 }
 
 main .user-login form a, 
-main .user-registration form a {
+main .user-registration form a,
+main .create-a-post form a {
     font-size:.8rem;
     font-weight:bold;
+    text-decoration:underline;
+}
+
+main .create-a-post textarea {
+    height:160px;
 }

@@ -27,6 +27,28 @@ router.get('/register', async (req, res) => {
   }
 });
 
+
+
+
+
+router.get('/post', withAuth, async (req, res) => {
+
+  try {
+    
+    res.render('post', {
+        logged_in: req.session.logged_in,
+    });
+
+  } catch (err) {
+      console.error(err);
+      res.status(500).json(err);
+  }
+});
+
+
+
+
+
 router.get('/dashboard', async (req, res) => {
 
   try {
