@@ -17,8 +17,8 @@
             </ul>
         </div>
         <div class="post-buttons display-flex justify-flex-end">
-            <button id="update-a-post" class="btn" data-id="{{post.id}}">UPDATE POST</button>
-            <button id="delete-a-post" class="btn" data-id="{{post.id}}">DELETE</button>
+            <button class="btn update-a-post" data-id="{{post.id}}" data-func="update">UPDATE POST</button>
+            <button class="btn delete-a-post" data-id="{{post.id}}" data-func="delete">DELETE</button>
         </div>
     </div>
 {{/each}}

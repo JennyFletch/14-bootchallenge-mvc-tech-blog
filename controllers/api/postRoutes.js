@@ -2,6 +2,35 @@ const router = require('express').Router();
 const { Post} = require('../../models');
 const withAuth = require('../../utils/auth');
 
+
+router.get('/:id', async (req, res) => {
+
+  const postId = req.params.id;
+  console.log(postId);
+  try {
+    const postData = await Post.findAll({ 
+      where: { id: postId }
+    });
+    //const posts = postData.map((post) => post.get({ plain: true }));
+
+    // res.status(200).json(postData);
+
+    /* res.render('post', {
+      postData,
+      logged_in: req.session.logged_in,
+    }); */
+
+    // res.status(200).json(postData);
+
+    res.status(200).json(postData);
+    
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  } 
+
+});
+
 router.post('/', withAuth, async (req, res) => {
     try {
       const newPost = await Post.create({
@@ -10,6 +39,26 @@ router.post('/', withAuth, async (req, res) => {
       });
   
       res.status(200).json(newPost);
+    } catch (err) {
+      res.status(400).json(err);
+    }
+});
+
+router.put('/:id', withAuth, async (req, res) => {
+
+    const postId = req.params.id;
+
+    try {
+      const updatedPost = await Post.update(
+        {
+        ...req.body
+        },
+        {
+          where: { id: postId }
+        }
+      );
+
+      res.status(200).json(updatedPost);
     } catch (err) {
       res.status(400).json(err);
     }
