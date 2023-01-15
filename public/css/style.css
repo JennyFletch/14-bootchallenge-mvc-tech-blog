@@ -95,8 +95,17 @@ main .blogroll-posts #create-post {
     cursor:pointer; 
 }
 
-main .blogroll-posts .post-buttons {
+main input#newpost-title {
+    font-weight:bold;
+}
+
+main .blogroll-posts .post-buttons,
+main .post-comment-button {
     padding:0 25px 15px 25px;
+}
+
+main .post-comment-button {
+    text-align:right;
 }
 
 main .blogroll-posts .post-buttons .btn {
