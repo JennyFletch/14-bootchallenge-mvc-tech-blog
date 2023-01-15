@@ -95,6 +95,14 @@ main .blogroll-posts #create-post {
     cursor:pointer; 
 }
 
+main .blogroll-posts .post-buttons {
+    padding:0 25px 15px 25px;
+}
+
+main .blogroll-posts .post-buttons .btn {
+    margin-left:10px;
+}
+
 main .user-login, 
 main .user-registration,
 main .create-a-post {

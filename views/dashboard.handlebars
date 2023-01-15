@@ -9,12 +9,16 @@
     <div class="blogroll-post user-post">
        <h3 class="post-title display-flex justify-space-between-lg align-center"><span>{{post.title}}</span> <span class="meta">Posted by {{post.user.username}} on {{format_date post.date_created}}</span></h3>
        <div class="post-content">{{post.description}}</div>
-        <div class="post-comments">
+       <div class="post-comments">
             <ul id="pc-{{post.id}}" class="post-comments">
                 {{#each comments as |comment|}}
                 <li>{{comment.description}} <div class="meta">&mdash; {{comment.user.username}}, {{format_date comment.date_created}}</div></li>
                 {{/each}}
             </ul>
+        </div>
+        <div class="post-buttons display-flex justify-flex-end">
+            <button id="update-a-post" class="btn" data-id="{{post.id}}">UPDATE POST</button>
+            <button id="delete-a-post" class="btn" data-id="{{post.id}}">DELETE</button>
         </div>
     </div>
 {{/each}}

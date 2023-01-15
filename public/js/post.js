@@ -26,6 +26,48 @@ const savePost = async (e) => {
 
 }
 
+
+const deletePost = async (e) => {
+
+  console.log("delete button clicked");
+
+  if (e.target.hasAttribute('data-id')) {
+    const id = e.target.getAttribute('data-id');
+    const idNum = parseInt(id, 10);
+
+    const response = await fetch(`/api/postRoutes/${idNum}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert('Failed to delete project');
+    }
+  }
+
+}
+
+
+const updatePost = async (e) => {
+
+  console.log("update button clicked");
+
+}
+
+
+
+
+var updatePostBtn = document.querySelector('#update-a-post');
+if(updatePostBtn) {
+  updatePostBtn.addEventListener('click', updatePost);
+} 
+
+var deletePostBtn = document.querySelector('#delete-a-post');
+if(deletePostBtn) {
+  deletePostBtn.addEventListener('click', deletePost);
+} 
+
 var newPostBtn = document.querySelector('#create-post');
 if(newPostBtn) {
   newPostBtn.addEventListener('click', (e) => { location.href='/post' });
