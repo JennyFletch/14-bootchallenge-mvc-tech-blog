@@ -30,7 +30,7 @@ const savePost = async (e) => {
             });
         
             if(saveResponse.ok) {
-              document.location.replace('/dashboard');
+              document.location.replace('/');
             } else {
               alert('Failed to save post');
             }
@@ -67,7 +67,6 @@ const savePost = async (e) => {
 }
 
 
-
 const updateDelPost = async (e) => {
 
   const reqAction = e.target.getAttribute('data-func');
@@ -83,18 +82,6 @@ const updateDelPost = async (e) => {
           const id = e.target.getAttribute('data-id');
           const idNum = parseInt(id, 10);
           location.href=`/post/${idNum}`;
-
-          /* const response = await fetch(`/api/postRoutes/${idNum}`, {
-            method: 'GET',
-          });
-      
-          if (response.ok) {
-            // document.location.reload();
-            console.log("now what?" + response.body);
-            
-          } else {
-            alert('Failed to update project');
-          } */
         }
       }
       break;
@@ -119,46 +106,7 @@ const updateDelPost = async (e) => {
     default:
       break;
   }
-
-  // DELETE
-  /* if (e.target.hasAttribute('data-id')) {
-    const id = e.target.getAttribute('data-id');
-    const idNum = parseInt(id, 10);
-
-    const response = await fetch(`/api/postRoutes/${idNum}`, {
-      method: 'DELETE',
-    });
-
-    if (response.ok) {
-      document.location.reload();
-    } else {
-      alert('Failed to delete project');
-    }
-  }
-
-  // UPDATE
-  if (e.target.hasAttribute('data-id')) {
-    const id = e.target.getAttribute('data-id');
-    const idNum = parseInt(id, 10);
-
-    console.log(`attempting to go to /post/${idNum}`);
-
-    location.href=`/post/${idNum}`; */
-
-    /* const response = await fetch(`/api/postRoutes/${idNum}`, {
-      method: 'GET',
-    });
-
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert('Failed to delete project');
-    } */
-  //}
-
 }
-
-
 
 
 var blogrollButtons = document.querySelector('.blogroll-posts');

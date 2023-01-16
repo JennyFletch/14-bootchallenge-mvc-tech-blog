@@ -16,7 +16,6 @@ router.get('/login', async (req, res) => {
   }
 });
 
-
 router.get('/register', async (req, res) => {  
 
   try {
@@ -29,7 +28,6 @@ router.get('/register', async (req, res) => {
   }
 });
 
-
 router.get('/post/:id', withAuth, async (req, res) => {
 
   const postId = req.params.id;
@@ -39,17 +37,6 @@ router.get('/post/:id', withAuth, async (req, res) => {
       where: { id: postId }
     });
     const posts = postData.map((post) => post.get({ plain: true }));
-
-  
-
-    // res.status(200).json(postData);
-
-    /* res.render('post', {
-      postData,
-      logged_in: req.session.logged_in,
-    }); */
-
-    // res.status(200).json(postData);
 
     res.render('post', {
       posts,
@@ -62,8 +49,6 @@ router.get('/post/:id', withAuth, async (req, res) => {
   } 
 
 });
-
-
 
 router.get('/post', withAuth, async (req, res) => {
 
@@ -78,7 +63,6 @@ router.get('/post', withAuth, async (req, res) => {
       res.status(500).json(err);
   }
 });
-
 
 router.get('/dashboard', async (req, res) => {
 
@@ -113,7 +97,6 @@ router.get('/dashboard', async (req, res) => {
   }
 });
 
-
 router.get('/', async (req, res) => {
     try {
       const postData = await Post.findAll({
@@ -140,5 +123,6 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
     }
 });
+
 
 module.exports = router;

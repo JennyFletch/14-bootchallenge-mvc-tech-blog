@@ -11,16 +11,6 @@ router.get('/:id', async (req, res) => {
     const postData = await Post.findAll({ 
       where: { id: postId }
     });
-    //const posts = postData.map((post) => post.get({ plain: true }));
-
-    // res.status(200).json(postData);
-
-    /* res.render('post', {
-      postData,
-      logged_in: req.session.logged_in,
-    }); */
-
-    // res.status(200).json(postData);
 
     res.status(200).json(postData);
     
@@ -84,5 +74,6 @@ router.delete('/:id', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
 });
+
 
 module.exports = router;
