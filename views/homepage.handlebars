@@ -5,7 +5,7 @@
 <div class="container blogroll-posts blogroll-posts-home">
     <!-- Loop through each post in the database -->
     {{#each posts as |post| }}
-        <div class="blogroll-post">
+        <div id="blogpost-{{post.id}}" class="blogroll-post">
             <h3 class="post-title display-flex justify-space-between-lg align-center" data-id="{{post.id}}"><span>{{post.title}}</span> <span class="meta">Posted by {{post.user.username}} on {{format_date post.date_created}}</span></h3>
             <div class="post-content">{{post.description}}</div>
             <div class="post-comments">
@@ -16,7 +16,17 @@
                 </ul>
             </div>
             <div class="post-comment-button">
-                <button class="btn comment-btn" data-id="{{post.id}}">+ ADD COMMENT</button>
+                <button class="btn comment-btn col-2" data-id="{{post.id}}" data-func="add-comment">+ ADD COMMENT</button>
+            </div>
+            <div class="post-comment-form-outer post-comment-form-{{post.id}}">
+                <form class="form comment-form">
+                    <div class="form-group">
+                        <textarea class="form-input new-comment-{{post.id}}" data-id="{{post.id}}" data-func="write-comment"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn" type="submit" data-id="{{post.id}}" data-func="submit-comment">SUBMIT</button>
+                    </div>
+                </form>
             </div>
         </div>
     {{/each}}

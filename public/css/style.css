@@ -23,6 +23,10 @@ a {
     color:#fff;
 }
 
+#nav-logout.btn:hover {
+    color: var(--main-highlight);
+}
+
 nav a, nav .btn {
     margin:0 25px 0 0;
     color: var(--main-highlight);
@@ -82,7 +86,7 @@ main .blogroll-post .post-comments ul li {
     margin:10px 0 5px;
     background-color: var(--main-neutral);
     padding:10px 25px;
-    border-radius:6px;
+    border-radius:12px 12px 12px 0;
 }
 
 main .blogroll-post .post-comments ul li .meta {
@@ -100,12 +104,17 @@ main input#newpost-title {
 }
 
 main .blogroll-posts .post-buttons,
-main .post-comment-button {
+main .post-comment-button,
+main .post-comment-form-outer {
     padding:0 25px 15px 25px;
 }
 
 main .post-comment-button {
-    text-align:right;
+    text-align:center;
+}
+
+main .post-comment-form-outer {
+    display:none;
 }
 
 main .blogroll-posts .post-buttons .btn {

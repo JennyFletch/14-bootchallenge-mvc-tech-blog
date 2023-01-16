@@ -87,6 +87,9 @@ router.get('/dashboard', async (req, res) => {
      where: {
         user_id: req.session.user_id,
      },
+     order: [
+      ["date_created", "DESC"],
+    ],
      include: [
           {
             model: User,
@@ -114,6 +117,9 @@ router.get('/dashboard', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
       const postData = await Post.findAll({
+        order: [
+          ["date_created", "DESC"],
+        ],
         include: [
           {
             model: User,
