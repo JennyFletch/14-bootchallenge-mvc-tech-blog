@@ -66,6 +66,8 @@ main .blogroll-post h3.post-title {
 main .blogroll-post h3.post-title .meta {
     font-weight:normal; 
     font-size:.8rem;
+    margin-left:20px;
+    text-align:right;
 }
 
 main .blogroll-post .post-content {
@@ -92,11 +94,18 @@ main .blogroll-post .post-comments ul li {
 main .blogroll-post .post-comments ul li .meta {
     padding-top:10px;
     font-size:.8rem;
+    margin-left:20px;
+    text-align:right;
 }
 
 main .blogroll-posts #create-post { 
     margin-top:25px;
     cursor:pointer; 
+}
+
+main .blogroll-posts #create-post,
+main .blogroll-posts .comment-btn {
+    min-width:176px;
 }
 
 main input#newpost-title {
